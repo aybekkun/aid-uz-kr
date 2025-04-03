@@ -1,7 +1,9 @@
 import { Providers } from "@/app/providers"
+import { ServerProviders } from "@/app/server-providers"
 import { SITE_DESCRIPTION, SITE_NAME } from "@/shared/constants"
 import { Footer, Header, Navbar, StyleControlPanel } from "@/shared/layout"
 import { cn } from "@/shared/lib/utils"
+import { Toaster } from "@/shared/ui"
 import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
 import React from "react"
@@ -39,21 +41,28 @@ export default function RootLayout({
 	return (
 		<html lang={"en"}>
 			<body className={cn(montserrat.variable, montserrat.className)}>
-				<Providers>
-					<div
-						className={
-							"min-h-screen flex flex-col bg-background text-foreground"
-						}
-					>
-						<StyleControlPanel />
-						<Header />
-						<Navbar />
-						<main className={"flex-grow flex flex-col gap-12 min-h-[50vh]"}>
-							{children}
-						</main>
-						<Footer />
-					</div>
-				</Providers>
+				<ServerProviders>
+					<Providers>
+						<div
+							className={
+								"min-h-screen flex flex-col bg-background text-foreground"
+							}
+						>
+							<StyleControlPanel />
+							<Header />
+							<Navbar />
+							<main
+								className={
+									"flex-grow flex flex-col gap-12 min-h-[50vh] max-md:pt-6"
+								}
+							>
+								{children}
+							</main>
+							<Footer />
+						</div>
+						<Toaster />
+					</Providers>
+				</ServerProviders>
 			</body>
 		</html>
 	)

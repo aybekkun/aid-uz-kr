@@ -1,10 +1,11 @@
-import type { Blog } from "@/shared/types"
+import type { Blog } from "@/shared/types/blog.types"
 import { Separator } from "@/shared/ui"
 import { BlogListItem } from "@/widgets/blog/blog-list-item"
 import { type FC } from "react"
 
 interface BlogListProps {
 	data: Blog[]
+	path: string
 	itemClassName?: string
 	itemClassNames?: {
 		title?: string
@@ -19,6 +20,7 @@ interface BlogListProps {
 
 const BlogList: FC<BlogListProps> = ({
 	data: blogs,
+	path,
 	itemClassName,
 	separatorClassName,
 	itemClassNames
@@ -31,6 +33,7 @@ const BlogList: FC<BlogListProps> = ({
 				blog ? (
 					<BlogListItem
 						data={blog}
+						path={path}
 						key={index}
 						classNames={itemClassNames}
 						className={itemClassName}

@@ -1,7 +1,9 @@
 import { SITE_DESCRIPTION, SITE_NAME } from "@/shared/constants"
-import { Button, Image } from "@/shared/ui"
+import { LangButton } from "@/shared/layout/header/lang-button"
+import { MenuButton } from "@/shared/layout/header/menu-button"
+import { ThemeButton } from "@/shared/layout/header/theme-button"
+import { Image } from "@/shared/ui"
 import { Container, Stack } from "@/widgets"
-import { Eye, Menu } from "lucide-react"
 import Link from "next/link"
 import { type FC } from "react"
 
@@ -37,29 +39,9 @@ const Header: FC = () => {
 					</Stack>
 
 					<Stack className={"gap-5 max-md:items-center"}>
-						<Button
-							size={"icon"}
-							variant={"ghost"}
-							className={
-								"[&_svg]:size-7 md:[&_svg]:size-9 text-muted-foreground rounded-full"
-							}
-						>
-							<Eye fill={"currentColor"} stroke={"#fff"} />
-						</Button>
-						<Button
-							size={"icon"}
-							variant={"ghost"}
-							className={"text-xl md:text-2xl font-normal"}
-						>
-							Py
-						</Button>
-						<Button
-							size={"icon"}
-							variant={"ghost"}
-							className={"[&_svg]:size-7 md:hidden"}
-						>
-							<Menu />
-						</Button>
+						<ThemeButton />
+						<LangButton />
+						<MenuButton />
 					</Stack>
 				</div>
 			</Container>

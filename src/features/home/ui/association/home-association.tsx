@@ -1,6 +1,7 @@
 import { Button } from "@/shared/ui"
 import { Container } from "@/widgets"
 import { ChevronRight } from "lucide-react"
+import Link from "next/link"
 import { type FC } from "react"
 
 const HomeAssociation: FC = () => {
@@ -36,8 +37,10 @@ const HomeAssociation: FC = () => {
 						жизнедеятельности общества и государства, а также развитие сильного
 						и устойчивого гражданского общества.
 					</p>
-					<Button variant={"default-secondary"}>
-						Подробнее <ChevronRight />
+					<Button variant={"default-secondary"} asChild={true}>
+						<Link href={"/association/about"}>
+							Подробнее <ChevronRight />
+						</Link>
 					</Button>
 				</div>
 			</Container>

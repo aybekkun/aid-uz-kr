@@ -1,11 +1,18 @@
-import { employeesData } from "@/shared/data/employees.data"
+import { getMemberList } from "@/services/association/member-list"
 import { BlogList } from "@/widgets/blog"
 import { type FC } from "react"
 
-const AssociationMemberList: FC = () => {
+const AssociationMemberList: FC = async () => {
+	const memberList = await getMemberList()
 	return (
 		<>
-			<BlogList data={employeesData} />
+			<BlogList
+				path={"/association/member-list"}
+				data={memberList.data.map((el) => ({
+					...el,
+					title: el.full_name
+				}))}
+			/>
 		</>
 	)
 }

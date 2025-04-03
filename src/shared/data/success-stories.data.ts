@@ -1,7 +1,11 @@
-import type { Blog } from "@/shared/types"
+import type { Blog } from "@/shared/types/blog.types"
 
 const successStory: Blog = {
 	id: 1,
+	slug: "slug",
+	content: "content",
+	created_at: "created_at",
+	updated_at: "updated_at",
 	image: "/activity/success-story.jpg",
 	title: "Право на образование лиц с инвалидностью",
 	subTitle: "24 декабрь 2024 г.",

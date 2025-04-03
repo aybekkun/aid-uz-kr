@@ -1,4 +1,5 @@
-import type { Blog, Preview } from "@/shared/types"
+import type { Blog } from "@/shared/types/blog.types"
+import type { Preview } from "@/shared/types/previews.types"
 
 const preview = {
 	image: "/home/preview.jpg",
@@ -19,6 +20,10 @@ const blog: Blog = {
 	image: "/home/blog.jpg",
 	title: "Право на образование лиц с инвалидностью",
 	subTitle: "24 декабрь 2024 г.",
+	updated_at: "2021",
+	slug: "slug",
+	content: "content",
+	created_at: "2022",
 	description:
 		"Этот доклад посвящён анализу права на образование для лиц с инвалидностью, ключевым законодательным актам, существующим программам и вызовам, а также современным подходам к обеспечению доступности образования для всех... Этот доклад посвящён анализу права на образование для лиц с инвалидностью, ключевым законодательным актам, существующим программам и вызовам, а также современным подходам к обеспечению доступности образования для всех..."
 }

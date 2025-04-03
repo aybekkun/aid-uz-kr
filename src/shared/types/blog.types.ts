@@ -4,4 +4,8 @@ export type Blog = {
 	subTitle?: string
 	description: string
 	image: string
+	content?: string
+	slug: string
+	created_at: string
+	updated_at: string
 }

@@ -2,6 +2,7 @@ import type { News } from "@/services/news"
 import { Button, Image } from "@/shared/ui"
 import { Stack } from "@/widgets"
 import { ChevronRight } from "lucide-react"
+import Link from "next/link"
 import { type FC } from "react"
 
 interface PreviewItemProps {
@@ -34,8 +35,10 @@ const PreviewItem: FC<PreviewItemProps> = ({ data: preview }) => {
 						{preview?.description}
 					</p>
 				</Stack>
-				<Button variant={"default-secondary"}>
-					Подробнее <ChevronRight />
+				<Button asChild={true} variant={"default-secondary"}>
+					<Link href={`news/${preview.slug}`}>
+						Подробнее <ChevronRight />
+					</Link>
 				</Button>
 			</div>
 		</div>

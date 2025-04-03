@@ -1,4 +1,4 @@
-import type { Blog } from "@/shared/types"
+import type { Blog } from "@/shared/types/blog.types"
 
 const employee = {
 	title: "Нарбаев Жаббар Адилбай улы",
@@ -11,6 +11,9 @@ export const employeesData: Blog[] = Array.from({ length: 4 }).map(
 	(_, index) => ({
 		...employee,
 		image: `/association/worker-${index + 1}.jpg`,
-		id: index + 1
+		id: index + 1,
+		slug: `${index + 1}`,
+		created_at: "2025-01-01",
+		updated_at: "2025-01-01"
 	})
 )

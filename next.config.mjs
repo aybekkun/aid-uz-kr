@@ -7,16 +7,10 @@ const nextConfig = {
 				hostname: "api.uznak.uz",
 				port: "",
 				pathname: "/media/uploads/**",
-				search: ""
+				search:""
 			}
 		]
-	},
-	typescript: {
-		ignoreBuildErrors: true
-	},
-	eslint: {
-		ignoreDuringBuilds: true
 	}
-}
+};
 
-export default nextConfig
+export default nextConfig;

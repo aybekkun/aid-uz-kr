@@ -1,11 +1,12 @@
-import { filesData } from "@/shared/data/files.data"
+import { getAnnualReports } from "@/services/association/annual-reports"
 import { type FC } from "react"
 import { AnnualReportsList } from "./annual-reports-list"
 
-const AssociationAnnualReports: FC = () => {
+const AssociationAnnualReports: FC = async () => {
+	const annualReports = await getAnnualReports()
 	return (
 		<>
-			<AnnualReportsList data={filesData} />
+			<AnnualReportsList data={annualReports.data} />
 		</>
 	)
 }

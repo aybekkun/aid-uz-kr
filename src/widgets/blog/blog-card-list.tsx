@@ -1,9 +1,10 @@
-import { News } from "@/services/news"
+import type { Blog } from "@/shared/types/blog.types"
 import { type FC } from "react"
 import { BlogCard } from "./blog-card"
 
 interface BlogListProps {
-	data: News[]
+	data: Blog[]
+	path: string
 	itemClassName?: string
 	itemClassNames?: {
 		image?: string
@@ -17,6 +18,7 @@ interface BlogListProps {
 
 const BlogCardList: FC<BlogListProps> = ({
 	data: blogs = [],
+	path,
 	itemClassNames,
 	itemClassName
 }) => {
@@ -24,6 +26,7 @@ const BlogCardList: FC<BlogListProps> = ({
 		<div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"}>
 			{blogs.map((blog, index) => (
 				<BlogCard
+					path={path}
 					classNames={itemClassNames}
 					className={itemClassName}
 					data={blog}

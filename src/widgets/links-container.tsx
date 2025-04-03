@@ -1,4 +1,4 @@
-import type { LinkItem } from "@/shared/types"
+import type { LinkItem } from "@/shared/types/links.types"
 import { NavLink } from "@/shared/ui"
 import type { FC, PropsWithChildren } from "react"
 
